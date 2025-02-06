@@ -4,7 +4,11 @@ class KnowledgeGraph:
         self.nodes = {}
         # Store edges as a dictionary of dictionaries for source -> target -> relationship
         self.edges = {}
-        
+
+    def clear(self):
+        self.nodes = {}
+        self.edges = {}        
+    
     def add_node(self, node_id, attributes=None):
         """Add a node to the graph with optional attributes."""
         self.nodes[node_id] = attributes or {}
@@ -63,8 +67,8 @@ class KnowledgeGraph:
 
     def dump(self):
         return {
-            "nodes": self.nodes,
-            "relationships": {
+            "people": self.nodes,
+            "relations": {
                 source: {
                     target: rel 
                     for target, rel in targets.items()

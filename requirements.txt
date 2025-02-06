@@ -10,3 +10,5 @@ bitsandbytes==0.43.1
 trl==0.8.6
 peft==0.10.0
 transformers==4.40.0
+
+pypdf
