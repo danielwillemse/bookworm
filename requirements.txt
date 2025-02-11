@@ -12,3 +12,7 @@ peft==0.10.0
 transformers==4.40.0
 
 pypdf
+yfiles_jupyter_graphs
+networkx
+
+gradio
