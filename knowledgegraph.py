@@ -26,11 +26,8 @@ class KnowledgeGraph:
         # Add the relationship
         if source not in self.edges:
             self.edges[source] = {}
-        self.edges[source][target] = relationship
-        
-    def get_relationships(self, source):
-        """Get all relationships from a source node."""
-        return self.edges.get(source, {})
+            self.edges[source][target] = []
+        self.edges[source][target].append(relationship)
     
     def query(self, source, relationship):
         """Find all nodes that have a specific relationship with the source node."""
@@ -67,8 +64,8 @@ class KnowledgeGraph:
 
     def dump(self):
         return {
-            "people": self.nodes,
-            "relations": {
+            "nodes": self.nodes,
+            "edges": {
                 source: {
                     target: rel 
                     for target, rel in targets.items()
